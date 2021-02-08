@@ -6,11 +6,17 @@ import java.io.*;
 */
 public class Cat{
   /**
+  * @brief constructor que realiza la lectura inmediata de los argumentos
+  */
+  public Cat(String[] argumentos){
+    my_cat(argumentos);
+  }
+  /**
   * @brief my_cat utilza el principio del comando linux para leer el
   * contenido de cada archivo en sus argumentos
   * @param args son los argumentos a leer
   */
-  public void my_cat(String[] args){
+  private void my_cat(String[] args){
     int argc = args.length;
     for(int i = 1; i < argc; i++){
       try{

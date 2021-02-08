@@ -7,19 +7,16 @@ import java.util.Scanner;
 public class Main{
   public static void main(String[] args) {
     if(args.length == 0){
-      System.out.println("Sin argumentos\n"+
-      "\nalgunos ejemplos: "+
-      "\n\tmyCat [argumento1 a leer] [argumento2 a leer...etc]"+
-      "\n\tmyMkdir"
-      "\n\tmyVi [nombre del archivo a escribir] (una vez terminada la edicion escribir 'EOF' sin comillas para salir)"+
+      System.out.println("Sin argumentos\n"+"\nalgunos ejemplos: "+
+      "\n\tmyCat [argumento1 a leer] [argumento2 a leer...etc]"+"\n\tmyMkdir"+
+      "\n\tmyVi [nombre del archivo a escribir] (una vez terminada la edicion escribir 'EOF' sin comillas para salir)"
       );
     }
     else if(args[0].equals("myCat")){
       if (args.length <= 1) {
         System.out.println("Faltan argumentos de lectura para cat");
       }else{
-        Cat c = new Cat();
-        c.my_cat( args );
+        Cat c = new Cat(args);
       }
     }
     else if (args[0].equals("myMkdir")) {
