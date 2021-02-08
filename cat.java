@@ -4,13 +4,13 @@ import java.io.*;
 * @brief cat simula el comando de linux
 * @version 1.5
 */
-public interface cat{
+public class Cat{
   /**
   * @brief my_cat utilza el principio del comando linux para leer el
   * contenido de cada archivo en sus argumentos
   * @param args son los argumentos a leer
   */
-  public static void my_cat(String[] args){
+  public void my_cat(String[] args){
     int argc = args.length;
     for(int i = 1; i < argc; i++){
       try{

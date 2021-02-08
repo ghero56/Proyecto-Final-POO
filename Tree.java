@@ -1,5 +1,6 @@
 import java.io.File;
-public interface Tree {
+
+public class Tree {
 
   /**
   * Pretty print the directory tree and its file names.
@@ -8,7 +9,7 @@ public interface Tree {
   *            must be a folder.
   * @return
   */
-  public static String printDirectoryTree(File folder) {
+  public String printDirectoryTree(File folder) {
       if (!folder.isDirectory()) {
           throw new IllegalArgumentException("folder is not a Directory");
       }
@@ -18,7 +19,7 @@ public interface Tree {
       return sb.toString();
   }
 
-  private static void printDirectoryTree(File folder, int indent, StringBuilder sb) {
+  private void printDirectoryTree(File folder, int indent, StringBuilder sb) {
       if (!folder.isDirectory()) {
           throw new IllegalArgumentException("folder is not a Directory");
       }
@@ -37,14 +38,14 @@ public interface Tree {
 
   }
 
-  private static void printFile(File file, int indent, StringBuilder sb) {
+  private void printFile(File file, int indent, StringBuilder sb) {
       sb.append(getIndentString(indent));
       sb.append("+--");
       sb.append(file.getName());
       sb.append("\n");
   }
 
-  private static String getIndentString(int indent) {
+  private String getIndentString(int indent) {
       StringBuilder sb = new StringBuilder();
       for (int i = 0; i < indent; i++) {
           sb.append("|  ");

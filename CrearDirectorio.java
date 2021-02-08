@@ -5,15 +5,19 @@ import java.util.Scanner;
 * @author Arturo Acosta / Fernando Arciga
 * @version 1.5
 */
-public interface CrearDirectorio{
+public class CrearDirectorio{
   /** Clase representa un directorio*/
-  public static File directorio = new File("DirectorioPrueba");
+  private File directorio = new File("DirectorioPrueba");
+
+  public File get_file_en_memoria(){
+    return directorio;
+  }
 
   /**
   * @brief Método para crear el directorio principal a partir del cual * * Tree va a partir.
   * Revisa si el directorio está creado; si está creado entra el else y * sale del método, si no existe se crea el directorio.
   */
-  public static void crearDirectorio(){
+  public void crearDirectorio(){
     if(!directorio.exists()){
       try{
         directorio.mkdir();
@@ -29,7 +33,7 @@ public interface CrearDirectorio{
   * @brief Método para crear subcarpetas
   * @param sc es el lector de consola para el nombre de la carpeta
   */
-  public static void crearCarpeta(Scanner sc){
+  public void crearCarpeta(Scanner sc){
     String name;
     System.out.println("Ingrese el nombre de la carpeta");
     name = sc.next();
@@ -51,7 +55,7 @@ public interface CrearDirectorio{
   * o en cualquier otra carpeta
   * @param recibe el escaner para leer desde consola
   */
-  public static void crearArchivo(Scanner sc){
+  public void crearArchivo(Scanner sc){
     String name;
     System.out.println("Ingrese el nombre de la carpeta donde quiere crear el archivo:");
     System.out.println("Si quiere grardar en una subcarpeta ingrsar: DirectorioPrueba/nombreDeSubcarpeta");
